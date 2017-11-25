@@ -12,8 +12,11 @@
     "express": "^4.16.2",
     "mongodb": "^2.2.33"
   },
+  "engines": {
+    "node": "8.9.1"
+  },
   "repository": {
-      "type": "git",
-      "url": "https://git.heroku.com/fcctimestampdm.git"
+    "type": "git",
+    "url": "https://git.heroku.com/fcctimestampdm.git"
   }
 }
