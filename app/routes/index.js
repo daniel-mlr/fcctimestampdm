@@ -18,7 +18,7 @@ module.exports = function(app) {
     
     var mess = function(datestr) {
         if (/^\d+$/.test(datestr)) {
-            datestr = parseInt(datestr)
+            datestr = parseInt(datestr) * 1000 ;
         }
 
         var d = new Date(datestr)
@@ -26,7 +26,7 @@ module.exports = function(app) {
             if (d == 'Invalid Date') {
                 return {'unix': null, 'natural': null}
             } else {
-                return {'unix': d.valueOf(), 'natural': d.toDateString()};
+                return {'unix': d.valueOf() / 1000, 'natural': d.toDateString()};
             }
     }
 
