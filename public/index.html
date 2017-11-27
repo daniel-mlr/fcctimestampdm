@@ -3,35 +3,41 @@
   <head>
     <meta charset="utf-8">
         <title>Timestamp microservice</title>
+    <link rel="stylesheet" href="/public/css/beauter.min.css" type="text/css">
     <link rel="stylesheet" href="/public/css/main.css" type="text/css">
     <!--
     <script src="script.js"></script>
     -->
   </head>
   <body>
-      <header>
-          <h1>API Basejump: Timestamp microservice</h1>
-      </header>
-      <div>
-          <h4>User stories:</h4>
-          <ol>
-              <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a
-                  natural language date <span class="ajout">in any format compliant with RFC-1123 or ISO-8601</span> (example: January 1, 2016).
-                  <span class="ajout"><em>Bonus</em>: Date components can also be separated by slashes (<code>/</code>)</span>
-              </li>
-              <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
-              <li>If it does not contain a date or Unix timestamp, it returns null for those properties. </li>
-          </ol>
+      <div class="container">
+          <header>
+              <h1><small>API Basejump:</small> Timestamp microservice</h1>
+          </header>
+          <main>
+              <h4>User stories:</h4>
+              <ol>
+                  <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a
+                      natural language date <mark>in any format compliant with RFC-1123 or ISO-8601</mark> (example: January 1, 2016).
+                      <span class="ajout"><strong>Bonus</strong>: Date components can also be separated by slashes (<code>/</code>)</span>
+                  </li>
+                  <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
+                  <li>If it does not contain a date or Unix timestamp, it returns null for those properties. </li>
+              </ol>
+          </main>
+          <div class="code-container">
+              <h4>Example usage:</h4>
+              <code>https://fcctimestampdm.herokuapp.com/December%2015,%202015</code><br>
+              <code>https://fcctimestampdm.herokuapp.com/1450137600</code><br>
+              <code>https://fcctimestampdm.herokuapp.com/15 dec 15</code><br>
+              <code>https://fcctimestampdm.herokuapp.com/dec 15, 15</code><br>
+              <code>https://fcctimestampdm.herokuapp.com/12-15-15</code><br>
+              <code>https://fcctimestampdm.herokuapp.com/12/15/2015</code><br>
+          </div>
+          <div class="code-container">
+              <h4>Example output:</h4>
+              <code>{"unix":1450137600,"natural":"Tue Dec 15 2015"}</code>
+          </div>
       </div>
-      <h3>Example usage:</h3>
-      <code>https://fcctimestampdm.herokuapp.com/December%2015,%202015</code><br>
-      <code>https://fcctimestampdm.herokuapp.com/1450137600</code>
-      <h3>Example output:</h3>
-      <code>
-          {
-          "unix": 1450137600,
-          "natural": "December 15, 2015"
-          }
-      </code>
   </body>
 </html>
